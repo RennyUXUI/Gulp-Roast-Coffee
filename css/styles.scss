@@ -102,7 +102,7 @@ html {
       max-width: 95%;
   }
   figcaption {
-    color: #F2F2F2;
+    color: $Secondary-Accent-Color;
     padding: 0.5rem;
   } 
   .button {
@@ -111,7 +111,7 @@ html {
     border-radius: 10px;
     padding: 0.5rem 1rem;
     margin: 0;
-    color: #F2F2F2;
+    color: $Secondary-Accent-Color;
     text-decoration: none;
     border: 3px solid $Secondary-Color;
   }
