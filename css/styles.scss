@@ -1,11 +1,21 @@
 
 
+$sans-serif1: "Lato", sans-serif;
+$sans-serif2: "Poppins", sans-serif;
+$background-color: #FFFFFF;
+$main-color: #082B59;
+$secondary-color: #59331D;
+$accent-color: #D98555;
+$secondary-accent-color: #F2F2F2;
+$radius: 10px;
+$stdspace: 1rem;
 
-$Background-Color: #FFFFFF
-$Main-Color #082B59;
-$Secondary-Color: #59331D;
-$Accent-Color: #D98555;
-$Secondary-Accent-Color: #F2F2F2;
+
+//mixins
+@mixin boxmodel1 ($margin,$padding) {
+  margin: $margin;
+  padding: $padding;
+}
 
 
 
@@ -19,14 +29,13 @@ html {
     box-sizing: inherit;
   }
   body {
-    background-color: $Main-Color;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
+    background-color: $main-color;
+    @include boxmodel1 (0 auto,0);
+    font-family: $sans-serif1;
     line-height: 2;
   }
   h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: $sans-serif2;
   }
   h1 {
     font-size: 2rem;
@@ -37,24 +46,23 @@ html {
     max-width: 75%;
   }
   a {
-    color: $Secondary-Color;
+    color: $secondary-color;
   }
   a:hover {
     text-decoration: none;
   }
   header {
-    border-bottom: 10px solid $Accent-Color;
+    border-bottom: $radius solid $accent-color;
   }
   /* navbar styling */
   nav ul {
-    padding: 0;
-    margin: 0;
+    @include boxmodel1 (0 auto,0);
     list-style-type: none;
     display: block;
     text-align: center;
   }
   nav li {
-    margin: 0 1rem 1rem 1rem;
+    margin: (0 $stdspace $stdspace $stdspace);
     font-size: 1.3rem;
   }
   /* max width on the image in pixels */
@@ -68,23 +76,22 @@ html {
     justify-content: left;
   }
   nav a {
-    color: $Secondary-Accent-Color;
+    color: $secondary-accent-color;
     text-decoration: none;
     display: block;
   }
   nav a:hover {
-    color: $Accent-Color;
+    color: $accent-color;
   }
   /* establishes a white background */
   .main-bkgd {
-    background: $Secondary-Accent-Color url(https://assets.codepen.io/6306176/gulp-bean-bkgd.jpg) repeat-x bottom;
+    background: $secondary-accent-color url(https://assets.codepen.io/6306176/gulp-bean-bkgd.jpg) repeat-x bottom;
     padding-bottom: 300px;
   }
   /* sits inside of the white background, centered */
   .main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    @include boxmodel1 (0 auto, 2 rem);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -93,49 +100,47 @@ html {
     flex-basis: 100%;
   }
     figure {
-    margin: 3rem 0 0 0;
+    margin: (3rem 0 0 0);
     flex-basis: 100%;
-      border-radius: 10px; 
+      border-radius: $radius; 
     }
   img {
       border-radius: 10%;
       max-width: 95%;
   }
   figcaption {
-    color: $Secondary-Accent-Color;
+    color: $secondary-accent-color;
     padding: 0.5rem;
   } 
   .button {
     display: inline-block;
-    background-color: $Secondary-Color;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-    margin: 0;
-    color: $Secondary-Accent-Color;
+    background-color: $secondary-color;
+    border-radius: $radius;
+    @include boxmodel1 (0, 0.5rem 1rem);
+    color: $secondary-accent-color;
     text-decoration: none;
-    border: 3px solid $Secondary-Color;
+    border: 3px solid $secondary-color;
   }
   .button:hover {
-    background-color: $Secondary-Accent-Color;
-    color: $Secondary-Color;
+    background-color: $secondary-accent-color;
+    color: $secondary-color;
   }
   footer {
-    color: $Secondary-Accent-Color;
+    color: $secondary-accent-color;
     text-align: center;
-    border-top: 10px; color: $Secondary-Accent-Color;
+    border-top: $radius; color: $secondary-accent-color;
   ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    @include boxmodel1 (0,0);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
   }
   a {
-    color: $Secondary-Accent-Color;
+    color: $secondary-accent-color;
     font-size: 2rem;
     display: block;
-    margin: 0 1rem 3rem 1rem;
+    margin: (0 $stdspace 3 $stdspace);
   }
 }
 
@@ -157,14 +162,14 @@ html {
         flex-basis: 73%;
       }
         figure {
-        margin: 3rem 0 0 0;
+        margin: (3 0 0 0);
         flex-basis: 33%; 
         }
       .span {
         flex-basis: 22%;
       }
       nav a {
-          margin: 0 0 3rem 0;
+        margin: (0 0 3 0);
           text-align: center;
       }
       .container {
@@ -185,10 +190,11 @@ html {
          display: flex;
          flex-flow: row wrap;
          justify-content: center;
+     
+     a {
+      margin: (0 0 3 0);
      }
-     nav a {
-         margin: 0 0 3rem 0;
-     }
+    }
      .logo {
          flex-basis: 100%;
          text-align: center;
@@ -246,10 +252,11 @@ html {
     nav ul {
       flex-flow: row;
       align-items: center;
-    }
-    nav .logo {
+    
+    .logo {
      text-align: start;
     }
+  }
     .product-container{
       grid-template-columns: repeat(3,1fr);
       grid-template-rows: 2;
@@ -280,8 +287,7 @@ html {
      }
      .product{
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
+      @include boxmodel1 (0 auto, 1 rem);
      } 
      
    
