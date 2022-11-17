@@ -167,7 +167,7 @@ footer a {
         flex-basis: 100%;
         text-align: center;
     }
-@media (min-width: 769px) {
+@media (min-width: 769px) {}
   nav ul {
        display: flex;
        flex-flow: row wrap;
@@ -216,6 +216,7 @@ footer a {
    grid-column: 2/ span 1;
    grid-row: 3;
   }
+}
 
 
 
@@ -264,8 +265,11 @@ footer a {
     grid-column: 3/ span 1;
     grid-row: 2;
    }
-   .products {
+   .product{
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
-   }
+   }      
+
+  }
+   
