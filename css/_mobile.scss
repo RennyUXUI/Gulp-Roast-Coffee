@@ -54,7 +54,7 @@ html {
     justify-content: left;
   }
   nav a {
-    color: $secondary-accent-color;
+    color: $background-color;
     text-decoration: none;
     display: block;
   }
@@ -87,7 +87,7 @@ html {
       max-width: 95%;
   }
   figcaption {
-    color: $secondary-accent-color;
+    color: $background-color;
     padding: 0.5rem;
   } 
   .button {
@@ -95,18 +95,18 @@ html {
     background-color: $secondary-color;
     border-radius: $radius;
     @include boxmodel1 (0, 0.5rem 1rem);
-    color: $secondary-accent-color;
+    color: $background-color;
     text-decoration: none;
     border: 3px solid $secondary-color;
   }
   .button:hover {
-    background-color: $secondary-accent-color;
+    background-color: $background-color;
     color: $secondary-color;
   }
   footer {
-    color: $secondary-accent-color;
+    color: $background-color;
     text-align: center;
-    border-top: $radius; color: $secondary-accent-color;
+    border-top: $radius; color: $background-color;
   ul {
     list-style-type: none;
     @include boxmodel1 (0,0);
@@ -115,7 +115,7 @@ html {
     justify-content: center;
   }
   a {
-    color: $secondary-accent-color;
+    color: $background-color;
     font-size: 2rem;
     display: block;
     margin: (0 $stdspace 3 $stdspace);
