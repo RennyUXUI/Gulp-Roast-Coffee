@@ -1,4 +1,4 @@
-    @media (min-width: 1025px) {
+  @media (min-width: 1025px) {
     .image1{
       display: block;
     }
@@ -46,7 +46,7 @@
      }
      .product{
       max-width: 1200px;
-      @include boxmodel1 (0 auto, 1 rem);
+      @include boxmodel1 (0 auto, 1rem);
      } 
      
    
