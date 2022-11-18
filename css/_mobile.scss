@@ -109,7 +109,7 @@ html {
     border-top: $radius; color: $background-color;
   ul {
     list-style-type: none;
-    @include boxmodel1 (0,0);
+    @include boxmodel1 (0 auto,0 auto);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
