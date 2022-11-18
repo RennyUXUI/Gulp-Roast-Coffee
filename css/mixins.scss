@@ -3,9 +3,5 @@
     padding: $padding;
   }
   
-  @mixin textposition ($flex-basis,$textalign) {
-    flex-basis: $flex-basis;
-    text-align: $textalign;
-  }
   
   

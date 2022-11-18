@@ -35,6 +35,7 @@
         margin: 0;
       }
       .logo {
-        @include textposition(100%,center);
+        flex-basis: 100%;
+        text-align: center;
       }
     }

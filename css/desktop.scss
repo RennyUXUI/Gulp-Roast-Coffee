@@ -9,7 +9,8 @@
      }
     }
      .logo {
-         @include textposition(100%,center);
+      flex-basis: 100%;
+      text-align: center;
      }
      .main {
        display: flex;
