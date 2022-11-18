@@ -17,6 +17,11 @@ $stdspace: 1rem;
   padding: $padding;
 }
 
+@mixin textposition ($flex-basis,$textalign) {
+  flex-basis: $flex-basis;
+  text-align: $textalign;
+}
+
 
 
 
@@ -182,9 +187,9 @@ html {
         margin: 0;
       }
       .logo {
-          flex-basis: 100%;
-          text-align: center;
+        @include textposition(100%,center);
       }
+
   @media (min-width: 769px) {}
     nav ul {
          display: flex;
@@ -196,8 +201,7 @@ html {
      }
     }
      .logo {
-         flex-basis: 100%;
-         text-align: center;
+         @include textposition(100%,center);
      }
      .main {
        display: flex;
